@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Previewer</title>
+
+    <!-- React and ReactDOM CDN links -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel for JSX support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Redux and React-Redux crossing-->
+    <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/react-redux@7.2.6/dist/react-redux.js"></script>
+    
+    <!-- marked library parses inputted markdown as HTML
+    By default marked does not support linebreaks, adjust the options-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/marked.min.js"></script>
+    <script>
+      marked.setOptions({
+        breaks: true,
+        renderer: new marked.Renderer(),
+      });
+    </script>
+
+    <!-- Import BootStrap and font-awesome for styling-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        font-size: 16px;
+        margin: 0;
+        text-align: center;
+        margin: 3%;
+      }
+
+      #editor, #preview {
+        background: #cbc4ea4a;
+        padding: 4rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        border: 8px solid #08031cd7;
+        margin: auto;
+        margin-bottom: 30px;
+        max-width: 95%;
+        min-height: 30vh;
+      }
+
+      #preview img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px
+      }
+
+      #preview table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      #preview th, #preview td {
+        border: 1px solid #221651d7;
+        padding: 0.5rem;
+      }
+      #editor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.6rem;
+        width: 60%
+      }
+      label {
+        font-size: 26px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" src="markdown_previewer.jsx"></script>
+    <!-- freeCodeCamp Test Script to ensure Project Passes-->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
